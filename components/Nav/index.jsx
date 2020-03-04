@@ -18,14 +18,13 @@ const Nav = styled.nav`
 `;
 
 const Navigation = () => {
-
-  const user = false;
+  const user = true;
 
   return (
     <Nav>
       <Link href="/">Inicio</Link>
-      <Link href="/">Populares</Link>
-      {user && <Link href="/">Nuevo Producto</Link>}
+      <Link href="/popular">Populares</Link>
+      {user && <Link href="/add">Nuevo Producto</Link>}
     </Nav>
   );
 };

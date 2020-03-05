@@ -4,6 +4,7 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { Search, Button } from '../UI';
 import Navigation from '../Nav';
+import { FirebaseContext } from '../../firebase';
 
 const HeaderContainer = styled.div`
   max-width: 1200px;
@@ -25,7 +26,11 @@ const Logo = styled.p`
 `;
 
 const Header = () => {
-  const user = false;
+  const { user, firebase } = React.useContext(FirebaseContext);
+
+  const onLogOut = async () => {
+    await firebase.LogOut();
+  };
 
   return (
     <header
@@ -63,9 +68,9 @@ const Header = () => {
                   margin-right: 2rem;
                 `}
               >
-                Hola: Jesus
+                {`Hola: ${user.displayName}`}
               </p>
-              <Button type="button" bgColor>
+              <Button type="button" bgColor onClick={onLogOut}>
                 Cerrar sesión
               </Button>
             </>

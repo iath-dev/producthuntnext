@@ -9,5 +9,8 @@
     },
     "prettier.disableLanguages": [
         "js"
+    ],
+    "cSpell.words": [
+        "Uploader"
     ]
 }

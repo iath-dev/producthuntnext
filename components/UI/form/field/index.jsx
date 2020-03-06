@@ -10,9 +10,14 @@ const Field = styled.div`
     font-size: 1.8rem;
   }
 
-  input {
+  input,
+  textarea {
     flex: 1;
     padding: 1rem;
+  }
+
+  textarea {
+    height: 350px;
   }
 `;
 

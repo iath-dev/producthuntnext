@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import Link from 'next/link';
 import styled from '@emotion/styled';
@@ -23,9 +24,17 @@ const Navigation = () => {
 
   return (
     <Nav>
-      <Link href="/">Inicio</Link>
-      <Link href="/popular">Populares</Link>
-      {user && <Link href="/add">Nuevo Producto</Link>}
+      <Link href="/">
+        <a>Inicio</a>
+      </Link>
+      <Link href="/popular">
+        <a>Populares</a>
+      </Link>
+      {user && (
+        <Link href="/add">
+          <a>Nuevo Producto</a>
+        </Link>
+      )}
     </Nav>
   );
 };

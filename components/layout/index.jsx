@@ -66,7 +66,6 @@ const Layout = ({ children }) => {
         `}
       />
       <Head>
-        <html lang="es" />
         <title>Product Hunt Firebase y Next.js</title>
         <link
           rel="stylesheet"

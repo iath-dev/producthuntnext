@@ -76,7 +76,7 @@ const LogIn = () => {
           </Field>
           {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
           {error && <ErrorMessage>{error}</ErrorMessage>}
-          <InputSubmit type="submit" value="Crear cuenta" />
+          <InputSubmit type="submit" value="Iniciar sesión" />
         </Form>
       </>
     </Layout>

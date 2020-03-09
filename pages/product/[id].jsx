@@ -4,6 +4,9 @@ import { Layout, Error404 } from '../../components';
 import { FirebaseContext } from '../../firebase';
 import { css } from '@emotion/core';
 import styled from '@emotion/styled';
+import moment from 'moment';
+import { Field, InputSubmit } from '../../components/UI/form';
+import { Button } from '../../components/UI';
 
 const Container = styled.div`
     @media (min-width: 768px) {
@@ -59,10 +62,52 @@ const Product = () => {
                     >{name}</h1>
                     <Container>
                         <div>
-                            11
+                            <p>Publicado el: {moment(created).format('ll')}</p>
+                            <img src={urlImg} alt="Imagen producto" />
+                            <p>{description}</p>
+                            <h2>Agrega tu comentario</h2>
+                            <form>
+                                <Field>
+                                    <input
+                                        type="text"
+                                        name="message"
+                                    />
+                                </Field>
+                                <InputSubmit
+                                    type="submit"
+                                    value="Añadir comentario"
+                                />
+                            </form>
+                            <h2 css={css`
+                                margin: 2rem 0;
+                            `}>Comentarios</h2>
+                            <ul>
+                            {comments.map(({ name, userName, id }) => (
+                                <li key={id}>
+                                    <p>{name}</p>
+                                    <p>Escrito por: {userName}</p>
+                                </li>
+                            ))}
+                            </ul>
                         </div>
                         <aside>
-                            22
+                                <Button
+                                    target="_blank"
+                                    bgColor
+                                    href={url}
+                                >
+                                    Visitar URL
+                                </Button>
+                                <div css={css`
+                                    margin: 5rem 0;
+                                `}>
+                                    <Button>
+                                        Votar
+                                    </Button>
+                                    <p css={css`
+                                        text-align: center
+                                    `}>{votes} Votos</p>
+                                </div>
                         </aside>
                     </Container>
                 </div>
